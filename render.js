@@ -102,8 +102,8 @@ function renderChart(box, result) {
 }
 function renderInfoBox(box, result) {
     createBox(box).attr('fill', COLORS[ID2C[result[0]]])
-    createLineText([box[0]+10, box[1]+10, box[2]-ResultPercentWidth-20, ResultPercentHeight], (result[1]/10)+"% "+LANGUAGES[result[0]][curlang]).attr('fill', result[0]=="nota"?"white":"black")
-    createText([box[0]+10, box[1]+20+ResultPercentHeight, box[2]-ResultPercentWidth-20, box[3]-30-ResultPercentHeight], result[0]+"desc",0,result[0]=="nota"?"white":"black")
+    createLineText([box[0]+10, box[1]+10, box[2]-ResultPercentWidth-40, ResultPercentHeight], (result[1]/10)+"% "+LANGUAGES[result[0]][curlang]).attr('fill', result[0]=="nota"?"white":"black")
+    createText([box[0]+10, box[1]+20+ResultPercentHeight, box[2]-ResultPercentWidth-40, box[3]-30-ResultPercentHeight], result[0]+"desc",0,result[0]=="nota"?"white":"black")
 }
 function renderResult(box, result, label) {
     textg = svg
