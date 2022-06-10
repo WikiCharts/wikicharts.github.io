@@ -67,8 +67,8 @@ TREES = [
             [[["free","obs"],["just","moder"]],["cont",["idc",["nota","cent"]]]],
             ["rehab",[["warn","decn"],[["det","retrib"],["nota",["idc","cent"]]]]],
             [["pop*","friend*"],[["sov","iso"],["cent",["idc","nota"]]]],
-            [],
-            []
+            ["nota",["idc","cent"]],
+            ["nota",["idc","cent"]]
         ]
 function encode(data) {
     bits = ["0"]
