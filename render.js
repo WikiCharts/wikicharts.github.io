@@ -1,5 +1,5 @@
 maxQs = 13
-COLORS={maroon:"#cd5d7d",orange:"#fdb462",yellow:"#ffffb3",green:"#7bf1a8",mint:"#60d394",aqua:"#8dd3c7",blue:"#80b1d3",cyan:"#9bf6ff",purple:"#bdb2ff",royal:"#9381ff",pink:"#ffc6ff",black:"#000000",grey:"#888888",white:"#dddddd"}
+COLORS={maroon:"#cd5d7d",red:"#fb8072",orange:"#fdb462",yellow:"#ffffb3",green:"#7bf1a8",mint:"#60d394",aqua:"#8dd3c7",blue:"#80b1d3",cyan:"#9bf6ff",purple:"#bdb2ff",royal:"#9381ff",pink:"#ffc6ff",black:"#000000",grey:"#888888",white:"#dddddd"}
 ID2C = {"nota": "black", "idc": "grey", "auth": "orange", "olig": "maroon", "strato": "purple", "cent": "white", "dir": "mint", "dir*": "cyan", "rep": "pink", "cons": "aqua", "min": "yellow", "cont": "blue", "moder": "aqua", "just": "pink", "obs": "green", "free": "yellow", "retrib": "maroon", "det": "blue", "warn":"green", "rehab": "pink", "decn": "yellow","iso":"orange","sov":"blue", "pop":"maroon", "pop*":"royal", "friend": "pink", "friend*":"cyan"}
 //create boxes statically once so call stack doesn't grow infinitely every time you click something
 function renderFormat() {
