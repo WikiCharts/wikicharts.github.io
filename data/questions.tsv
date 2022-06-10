@@ -22,8 +22,8 @@ recidivism	legal		det	decn	rehab	retrib	warn
 offender	legal		rehab	warn	decn	retrib	det								
 warning	legal		retrib	rehab/decn	warn/decn	det									
 ambiguity	legal		det	retrib	rehab	warn	decn								
-friendship	for		pop	sov	asim	nat	open	iso	pop	glob					
-uniformrules	for		asim	glob	pop	iso	sov	nat	open/pop						
-wikihelp	for		asim	nat	glob	sov/iso	pop/open	nat	open						
-instructions	for		nat	glob	open	pop	iso	asim/sov							
-wikiunion	for		pop	iso	glob	nat*	nat	open	sov/asim						
+friendship	for		friend	pop	iso	auto/sov									
+uniformrules	for		pop	friend	iso/sov	pop	auto								
+wikihelp	for		pop	friend	sov	iso	auto								
+instructions	for		iso/auto	friend	sov	pop									
+wikiunion	for		friend*	friend	iso	sov	pop	auto							
