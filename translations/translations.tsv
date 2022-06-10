@@ -117,6 +117,118 @@ representation	2	Я хочу иметь лидеров, которые буду�
 representation	3	У нас должен быть один неизбираемый правитель, который представляет интересы народа от своего лица.
 representation	4	Я не хочу представительства, представители мешают демократии, я хочу иметь возможность голосовать напрямую по большинству вопросов на референдумах.
 representation	5	Интересы народа не должны быть представлены так сильно, как интересы администрации, или небольшой группы статусных участников.
+equality		123
+equality	0	123.
+equality	1	123.
+equality	2	123.
+equality	3	123.
+openness		123
+openness	0	123.
+openness	1	123.
+openness	2	123.
+openness	3	123.
+freespeech		123
+freespeech	0	123.
+freespeech	1	123.
+freespeech	2	123.
+freespeech	3	123.
+freespeech	4	123.
+profanity		123
+profanity	0	123.
+profanity	1	123.
+profanity	2	123.
+profanity	3	123.
+profanity	4	123.
+etiquette		123
+etiquette	0	123.
+etiquette	1	123.
+etiquette	2	123.
+etiquette	3	123.
+literacy		123
+literacy	0	123.
+literacy	1	123.
+literacy	2	123.
+literacy	3	123.
+vulgarity		123
+vulgarity	0	123.
+vulgarity	1	123.
+vulgarity	2	123.
+vulgarity	3	123.
+vulgarity	4	123.
+banter		123
+banter	0	123.
+banter	1	123.
+banter	2	123.
+banter	3	123.
+rules		123
+rules	0	123.
+rules	1	123.
+rules	2	123.
+rules	3	123.
+rules	4	123.
+rules	5	123.
+blocking		123
+blocking	0	123.
+blocking	1	123.
+blocking	2	123.
+blocking	3	123.
+blocking	4	123.
+permanent		123
+permanent	0	123.
+permanent	1	123.
+permanent	2	123.
+permanent	3	123.
+permanent	4	123.
+recidivism		123
+recidivism	0	123.
+recidivism	1	123.
+recidivism	2	123.
+recidivism	3	123.
+recidivism	4	123.
+offender		123
+offender	0	123.
+offender	1	123.
+offender	2	123.
+offender	3	123.
+offender	4	123.
+warning		123
+warning	0	123.
+warning	1	123.
+warning	2	123.
+warning	3	123.
+ambiguity		123
+ambiguity	0	123.
+ambiguity	1	123.
+ambiguity	2	123.
+ambiguity	3	123.
+ambiguity	4	123.
+friendship		123
+friendship	0	123.
+friendship	1	123.
+friendship	2	123.
+friendship	3	123.
+uniformrules		123
+uniformrules	0	123.
+uniformrules	1	123.
+uniformrules	2	123.
+uniformrules	3	123.
+wikihelp		123
+wikihelp	0	123.
+wikihelp	1	123.
+wikihelp	2	123.
+wikihelp	3	123.
+wikihelp	4	123.
+instructions		123
+instructions	0	123.
+instructions	1	123.
+instructions	2	123.
+instructions	3	123.
+wikiunion		123
+wikiunion	0	123.
+wikiunion	1	123.
+wikiunion	2	123.
+wikiunion	3	123.
+wikiunion	4	123.
 A		Выберите вариант, который вам ближе всего
 BL		Нажмите ?, если предпочтение незначительное
 BR		Нажмите ✓, если это определённо ваше предпочтение
