@@ -66,7 +66,7 @@
         else
             center.append("p").text("(вы можете скопировать или сохранить это изображение, кликнув ПКМ по нему)")
         var H = (Boxheight+Resultpadding+ResultLabelheight)
-        svg = center.append('svg').attr('width',"1800").attr('height',6*H+header+padding).attr("xmlns","http://www.w3.org/2000/svg")
+        svg = center.append('svg').attr('width',"1800").attr('height',4*H+header+padding).attr("xmlns","http://www.w3.org/2000/svg")
         svg.append("rect").attr("width",svg.attr("width")).attr("height",svg.attr("height")).attr("fill","#2b2d30")
         result = window.location.href.split("result=")[1].split("&")[0]
         result = decode(result);
