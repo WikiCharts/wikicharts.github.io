@@ -78,7 +78,7 @@
         createLineText([1100,padding+head/4,500,head/2],LANGUAGES["quizname"][curlang]).attr("fill","white");
         createLineText([1100,padding+head*3/4,500,head/4],"wikicharts.github.io").attr("fill","white");
         
-        ["gov2","speech","legal","for2"].forEach((d,i)=>{
+        ["gov","speech","legal","for"].forEach((d,i)=>{
             renderResult([100, H*i+header, 1600,H-Resultpadding], result[i], d)
         });
         
