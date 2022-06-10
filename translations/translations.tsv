@@ -28,7 +28,6 @@ warn		Штрафы
 rehab		Реабилитация
 decn		Децентрализация
 iso		Изоляционизм
-auto		Автономизм
 sov		Суверенитет
 pop		Вики-популизм
 pop*		Экспансионизм
@@ -57,7 +56,6 @@ warn	desc	123.
 rehab	desc	123.
 decn	desc	123.
 iso	desc	123.
-auto	desc	123.
 sov	desc	123.
 pop	desc	123.
 pop*	desc	123.
