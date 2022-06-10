@@ -31,6 +31,7 @@ iso		Изоляционизм
 auto		Автономизм
 sov		Суверенитет
 pop		Вики-популизм
+pop*		Экспансионизм
 friend		Викидружба
 friend*		Викисоюз
 quizname		WikiCharts Quiz
@@ -59,6 +60,7 @@ iso	desc	123.
 auto	desc	123.
 sov	desc	123.
 pop	desc	123.
+pop*	desc	123.
 friend	desc	123.
 friend*	desc	123.
 voting		Голосование
