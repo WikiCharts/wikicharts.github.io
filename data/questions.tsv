@@ -9,12 +9,12 @@ peoplepolicy	gov		dir	strato	auth/olig	cons	min	rep
 representation	gov		min	rep	cons	auth	dir	strato/olig							
 equality	gov		strato/olig	auth	dir/rep/cons	min									
 openness	gov		dir/rep/cons/min	auth/olig	strato	dir/rep/cons									
-freespeech	speech		proced	decn	lao	hum	prot								
-profanity	speech		proced	decn	lao	hum	prot								
-etiquette	speech		proced	decn	lao	hum	prot								
-literacy	speech		proced	decn	lao	hum	prot								
-vulgarity	speech		proced	decn	lao	hum	prot								
-banter	speech		proced	decn	lao	hum	prot								
+freespeech	speech		free	cont	moder	obs	just								
+profanity	speech		just	cont	free	obs	moder								
+etiquette	speech		cont	obs	moder/just	free									
+literacy	speech		just	obs/free	moder	cont									
+vulgarity	speech		obs	moder/just	cont	free	obs/just								
+banter	speech		moder	obs/free	cont	just									
 rules	legal		nat	glob	open	pop	iso	asim/sov							
 blocking	legal		proced	decn	lao	hum	prot								
 permanent	legal		proced	decn	lao	hum	prot								
