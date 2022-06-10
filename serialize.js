@@ -114,7 +114,7 @@ function decode(encoded) {
     ENCODING = unXOR(unpackbits(toBits(encoded))).join("")
     ENCIDX = 1;
     var results = []
-    for(var i = 0; i < 4; i++) {
+    for(var i = 0; i < 6; i++) {
         dimension = [0];
         results.push(dimension)
         curTree = TREES[i]
@@ -154,7 +154,7 @@ function toBits(encoded) {
         n = encodestr.indexOf(encoded[i]);
         c = i%2
         r = []
-        for(j = 0; j < 4; j++) {
+        for(j = 0; j < 6; j++) {
             v = n%2
             n = Math.floor(n/2);
             r.push(v)
@@ -166,14 +166,14 @@ function toBits(encoded) {
     return bits
 }
 function fromBits(bits) {
-    while(bits.length%4 > 0)
+    while(bits.length%6 > 0)
         bits.push(0)
     t = 0;
     var res = []
-    for(var i = 0; i < bits.length; i+=4)
+    for(var i = 0; i < bits.length; i+=6)
     {
         r = 0;
-        for(j = 0; j < 4; j++) {
+        for(j = 0; j < 6; j++) {
             r = r * 2 + bits[i+j]
         }
         res.push(encodestr[r]);
@@ -198,13 +198,13 @@ function unXOR(bits) {
     return bits;
 }
 function packbits(bits) {
-    while(bits.length%4 > 0)
+    while(bits.length%6 > 0)
         bits.push(0)
     var res = []
-    for(k = 0; k < 4; k++)
+    for(k = 0; k < 6; k++)
     {
-        j = (k+3)%4
-        for(i = 0; i < bits.length; i+=4)
+        j = (k+3)%6
+        for(i = 0; i < bits.length; i+=6)
             res.push(bits[i+j])
     }
     return res
@@ -214,9 +214,9 @@ function unpackbits(bits) {
     for(i = 0; i < bits.length; i++)
         res.push(0);
     count = 0;
-    for(k = 0; k < 4; k++) {
-        j = (k+3)%4
-        for(i = 0; i < bits.length; i+=4)
+    for(k = 0; k < 6; k++) {
+        j = (k+3)%6
+        for(i = 0; i < bits.length; i+=6)
         {
             res[i+j] = bits[count]
             count+=1;
