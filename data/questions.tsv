@@ -24,6 +24,6 @@ warning	legal		retrib	rehab/decn	warn/decn	det
 ambiguity	legal		det	retrib	rehab	warn	decn								
 friendship	for		friend	pop	iso	sov									
 uniformrules	for		pop	friend	iso/sov	pop									
-wikihelp	for		pop*	pop	friend	sov	iso								
+wikihelp	for		pop	pop*	friend	sov	iso								
 instructions	for		iso	friend	sov	pop									
 wikiunion	for		friend*	friend	iso	sov	pop								
