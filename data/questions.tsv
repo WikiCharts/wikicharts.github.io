@@ -20,7 +20,7 @@ blocking	legal		rehab	det	retrib	decn	det/warn
 permanent	legal		retrib	warn/rehab	decn	det	rehab								
 recidivism	legal		det	decn	rehab	retrib	warn								
 offender	legal		rehab	warn	decn	retrib	det								
-warning	legal		retrib	rehab/decn	warn/decn	det									
+warnings	legal		retrib	rehab/decn	warn/decn	det									
 ambiguity	legal		det	retrib	rehab	warn	decn								
 friendship	for		friend	pop	iso	sov									
 uniformrules	for		pop	friend	iso/sov	pop									
