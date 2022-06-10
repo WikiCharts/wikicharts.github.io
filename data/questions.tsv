@@ -1,14 +1,14 @@
 key	category	weight	0	1	2	3	4	5	6	7	8	9	10	nota	idc
-voting	gov		techno	repub	dir/rep	anar	auth/techno	plut	strato						
-votingreform	gov		anar	plut	rep/repub	auth	techno	dir	strato						
-concentration	gov		dir	techno	repub	plut	anar	strato	auth	rep					
-traits	gov		rep	strato	repub	dir	auth	anar	techno	plut					
-leaderselect	gov		anar/dir	auth	plut	techno	techno/strato	rep/repub							
-policysetting	gov		anar/dir	auth	plut	techno	techno/strato	rep/repub							
-peoplepolicy	gov		auth/rep/techno/strato	repub	anar/plut	dir/repub*	auth/rep/strato/techno								
-representation	gov		auth/techno	repub	auth*	strato	rep	plut	anar/dir/techno						
-equality	gov		repub	auth	rep	techno	dir	plut	strato	anar	repub/rep*				
-openness	gov		dir	plut	auth/techno/strato	repub	anar	rep							
+voting	gov		auth/olig	olig	strato	dir/rep/min	cons/min								
+votingreform	gov		strato	dir/min	dir	rep	dir*	cons	auth/olig						
+concentration	gov		dir	strato	min	auth	olig	rep	cons						
+traits	gov		min	auth/olig	dir/rep	strato/olig	cons/rep								
+leaderselect	gov		auth	olig	strato	dir/rep	cons	min							
+policysetting	gov		auth/olig	dir/rep	cons	dir	strato	min							
+peoplepolicy	gov		dir	strato	auth/olig	cons	min	rep							
+representation	gov		min	rep	cons	auth	dir	strato/olig							
+equality	gov		strato/olig	auth	dir/rep/cons	min									
+openness	gov		dir/rep/cons/min	auth/olig	strato	dir/rep/cons									
 freespeech	speech		proced	decn	lao	hum	prot								
 profanity	speech		proced	decn	lao	hum	prot								
 etiquette	speech		proced	decn	lao	hum	prot								
