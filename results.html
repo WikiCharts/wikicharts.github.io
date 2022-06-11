@@ -90,10 +90,9 @@
         var hyp = head*1.15470053839
         textg = svg;
         align = 1600
-        //svg.append("polygon").attr("points", [[align,padding],[align+hyp/2,header],[align+hyp,padding]].map(d=>d.join(", ")).join(" ")).attr("fill","#008080");
-        svg.append("circle").attr("cx", 1669).attr("cy", 110).attr("r", 70).map(d=>d.join(", ")).join(" ")).attr("fill","#80b1d3");
-        createLineText([1100,padding+head/4,500,head/2],LANGUAGES["quizname"][curlang]).attr("fill","white");
-        createLineText([1100,padding+head*3/4,500,head/4],"wikicharts.github.io").attr("fill","white");
+        //svg.append("polygon").attr("points", [[align,padding],[align+hyp/2,header],[align+hyp,padding]].map(d=>d.join(", ")).join(" ")).attr("fill","#008080");//#80b1d3
+        createLineText([1290,padding+head/4,500,head/2],LANGUAGES["quizname"][curlang]).attr("fill","white");
+        createLineText([1290,padding+head*3/4,500,head/4],"wikicharts.github.io").attr("fill","white");
         
         ["gov","speech","legal","for","for","for"].forEach((d,i)=>{
             renderResult([100, H*i+header, 1600,H-Resultpadding], result[i], d)
