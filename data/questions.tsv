@@ -1,9 +1,9 @@
 key	category	weight	0	1	2	3	4	5	6	7	8	9	10	nota	idc
 voting	gov		auth/olig	olig	strato	dir/rep/min	cons/min								
-votingreform	gov		strato	dir/min	dir	rep	dir*	cons	auth/olig						
+votingreform	gov		strato	dir/min	dir	rep	dir*/rep*	cons	auth/olig						
 concentration	gov		dir	strato	min	auth	olig	rep	cons						
-traits	gov		min	auth/olig	dir/rep	strato/olig	cons/rep								
-leaderselect	gov		auth	olig	strato	dir/rep	cons	min							
+traits	gov		min	dir	auth/olig	rep	strato/olig	cons/rep							
+leaderselect	gov		auth	olig	strato	dir	rep	cons	min						
 policysetting	gov		auth/olig	dir/rep	cons	dir	strato	min							
 peoplepolicy	gov		dir	strato	auth/olig	cons	min	rep							
 representation	gov		min	rep	cons	auth	dir	strato/olig							
