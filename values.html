@@ -16,7 +16,7 @@
     <meta property="og:locale" content="ru_RU" />
     
     <link rel="stylesheet" href="./css/basic.css">
-    <link rel="stylesheet" href="./css/warning.css">
+    <link rel="stylesheet" href="./css/values.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
@@ -36,21 +36,22 @@
         for(var i = 0; i < LANGUAGEDATA.length; i++)
             LANGUAGES[LANGUAGEDATA[i].key+LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i];
         center = d3.select('.content')
-        center.append("a").attr("href",("/"+curlang+".html").replace("ru.html","")).append("h2").text("На главную")
+        // center.append("a").attr("href",("/"+curlang+".html").replace("ru.html","")).append("h2").text("На главную")
         dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min","speech,cont,moder,just,obs,free","legal,retribu,det,warn,rehab,decn","fore,iso,sov,pop,pop*,friend,friend*"].map(d=>d.split(","))
+        
         for(var i = 0; i < dimensions.length; i++) {
-            center.append("h1").text(LANGUAGES[dimensions[i][0]][curlang]).style('font-size',50)
-            table = center.append("table").attr("width","80%")
-            cg = table.append('colgroup')
-            cg.append("col").style("width","20%")
-            cg.append("col").style("width","80%")
+            section = center.append("section").classed("section wikicharts__section")
+
+            section.append("h2").text(LANGUAGES[dimensions[i][0]][curlang]).classed("section__title")
+            table = section.append("div").classed('values-table')
+
             d = dimensions[i].slice(1)
             d.sort((a,b) => (LANGUAGES[a][curlang] > LANGUAGES[b][curlang]) ? 1 : -1)
+
             for(var j = 0; j < d.length; j++)
             {
-                
                 tr = table.append('tr')
-                tr.append('td').text(LANGUAGES[d[j]][curlang]).style('font-size',30).style('color',COLORS[ID2C[d[j]]]).style('font-weight', 'bold')
+                tr.append('div').classed('values-table__key').text(LANGUAGES[d[j]][curlang]).style('color',COLORS[ID2C[d[j]]])
                 /*colors = "red,orange,yellow,green,blue,purple".split(",");
                 if(d[j] == "just")
                 {
@@ -59,11 +60,11 @@
                         td.append("span").text(LANGUAGES[d[j]+"desc"][curlang][k]).style('font-size',18).style('color',COLORS[colors[k%colors.length]]).style('font-weight', 'bold')
                 }
                 else*/
-                tr.append('td').text(LANGUAGES[d[j]+"desc"][curlang]).style('font-size',18).style('padding',"20px").style('color',COLORS[ID2C[d[j]]]).style('font-weight', 'bold')
+                tr.append('div').classed('values-table__value').text(LANGUAGES[d[j]+"desc"][curlang]).style('color',COLORS[ID2C[d[j]]])
             }
-            center.append('hr')
+            section.append('hr')
         }
-        
+
     });
     </script>
 </head>
@@ -71,7 +72,7 @@
     <article class="wikicharts">
         <aside class="sidebar wikicharts__sidebar">
             <nav class="wikicharts__sidebar-buttons">
-                <a class="wikicharts__sidebar-button wikicharts__sidebar-button--home" href="./">На главную</a>
+                <a class="wikicharts__sidebar-button wikicharts__sidebar-button--home" href="./?lang=ru">На главную</a>
             </nav>
             <a class="wikicharts__sidebar-button wikicharts__sidebar-button--start" href="quiz.html?lang=ru">Начать тест</a>
         </aside>
