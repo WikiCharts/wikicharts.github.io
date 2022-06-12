@@ -1,0 +1,76 @@
+:root {
+    --theme-link: #0094ff;
+    --theme-link--rgb: 0, 149, 255;
+}
+
+html, body {
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-attachment: fixed;
+    background-image: linear-gradient(0deg, #090d18, #121630);
+}
+
+a {
+    text-decoration: none;
+}
+
+.wikicharts {
+    background-color: #171a44;
+    border-radius: 3px;
+    margin-inline: auto;
+    margin-block: 100px;
+    max-width: 1000px;
+    min-height: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts {
+        margin-block: 0;
+    }
+}
+
+.wikicharts__content {
+    padding: 20px 36px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__content {
+        padding-inline: 20px;
+    }
+}
+
+.wikicharts__content a {
+    color: rgba(var(--theme-link--rgb), 1);
+    transition: .3s;
+}
+
+.wikicharts__content a:hover {
+    color: rgba(var(--theme-link--rgb), .8);
+}
+
+.wikicharts__section {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+}
+
+.wikicharts__section:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.wikicharts__section--start-quiz {
+    align-items: center;
+    gap: 20px;
+}
+
+.section__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-inline: auto;
+    margin-block: 0;
+}

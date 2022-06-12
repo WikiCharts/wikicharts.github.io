@@ -1,0 +1,66 @@
+.warning-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .warning-buttons {
+        flex-direction: column;
+    }
+}
+
+.warning-buttons__button {
+    align-items: center;
+    background-color: rgba(var(--theme-link--rgb), .1);
+    border: none;
+    border-radius: 3px;
+    color: var(--theme-link);
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    min-height: 24px;
+    padding: 6px 12px;
+    text-align: center;
+    transition: .3s;
+}
+
+.wikicharts__section .warning-buttons__button:hover {
+    background-color: rgba(var(--theme-link--rgb), .2);
+}
+
+.wikicharts__section .warning-buttons__button:active {
+    background-color: rgba(var(--theme-link--rgb), .3);
+}
+
+.wikicharts__section .warning-buttons__button--yes {
+    background-color: rgba(50, 205, 50, .1);
+    color: rgb(50, 205, 50);
+}
+
+.wikicharts__section .warning-buttons__button--yes:hover {
+    background-color: rgba(50, 205, 50, .2);
+    color: rgb(50, 205, 50);
+}
+
+.wikicharts__section .warning-buttons__button--yes:active {
+    background-color: rgba(50, 205, 50, .3);
+    color: rgb(50, 205, 50);
+}
+
+.wikicharts__section .warning-buttons__button--no {
+    background-color: rgba(255, 0, 0, .1);
+    color: rgb(255, 0, 0);
+}
+
+.wikicharts__section .warning-buttons__button--no:hover {
+    background-color: rgba(255, 0, 0, .2);
+    color: rgb(255, 0, 0);
+}
+
+.wikicharts__section .warning-buttons__button--no:active {
+    background-color: rgba(255, 0, 0, .3);
+    color: rgb(255, 0, 0);
+}

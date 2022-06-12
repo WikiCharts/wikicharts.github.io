@@ -1,21 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WikiCharts</title>
     <meta
       name="description"
       content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно."
     />
-    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/images/Charts.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="Charts.png"/>
     <meta property="og:url" content="https://wikicharts.github.io/" />
     <meta property="og:title" content="WikiCharts" />
     <meta property="og:locale" content="ru_RU" />
-    <meta
-      property="og:description"
-      content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно."
-    />
-    <meta property="og:image" content="/images/Charts.jpg" />
+    
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/warning.css">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
     <script>
@@ -25,39 +27,19 @@
 
     gtag('config', 'G-0JY69PX91M');
     </script>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="data/Charts.png"/>
-    <title>WikiCharts</title>
-    <style>
-        body {
-            font-family: Arial;
-            color: lightgrey
-        }
-        h1 {
-            font-size: 3em;
-        }
-        h2 {
-            font-size: 2.2em;
-        }
-        p {
-            font-size: 1.5em;
-            color: #fdfdfd;
-        }
-        a[href] {
-            color: #1e8ad6;
-        }
-        a[href]:hover {
-            color: #3ba0e6;
-        }
-    </style>
-    <body style="background-color:#2b2d30">
-    <center>
-    <div style="x:20%;width:70%">
-        <h1>Внимание!</h1>
-        <p>Вы уже прошли тест? Перед тем, как увидеть все возможные значения, рекомендуем сначала пройти тест, так как просмотр возможных значений может исказить ваши результаты.</p>
-        <a href="values.html?lang=ru"><h2>Да, я уже прошёл тест</h2></a>
-        <a href="https://wikicharts.github.io/"><h2>Нет, я ещё не прошёл тест</h2></a>
-    </div>
-    </center>
-    </body>
 </head>
+<body>
+    <article class="wikicharts">
+        <main class="content wikicharts__content">
+            <h1 class="wikicharts__title">Внимание!</h1>
+            <section role="region" class="wikicharts__section wikicharts__section--start-quiz" id="StartQuiz">
+                <p>Вы уже прошли тест? Перед тем, как увидеть все возможные значения, рекомендуем сначала пройти тест, так как просмотр возможных значений может исказить ваши результаты.</p>
+                <div class="warning-buttons">
+                    <a class="warning-buttons__button warning-buttons__button--yes" href="values.html?lang=ru">Да, я уже прошёл тест</a>
+                    <a class="warning-buttons__button warning-buttons__button--no" href="https://wikicharts.github.io/">Нет, я ещё не прошёл тест</a>
+                </div>
+            </section>
+        </main>
+    </article>
+</body>
+</html>
