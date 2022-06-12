@@ -35,7 +35,7 @@
         LANGUAGES = {}
         for(var i = 0; i < LANGUAGEDATA.length; i++)
             LANGUAGES[LANGUAGEDATA[i].key+LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i];
-        center = d3.select('content')
+        center = d3.select('.content')
         center.append("a").attr("href",("/"+curlang+".html").replace("ru.html","")).append("h2").text("На главную")
         dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min","speech,cont,moder,just,obs,free","legal,retribu,det,warn,rehab,decn","fore,iso,sov,pop,pop*,friend,friend*"].map(d=>d.split(","))
         for(var i = 0; i < dimensions.length; i++) {
