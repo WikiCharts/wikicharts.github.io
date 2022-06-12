@@ -52,8 +52,7 @@
 
             for(var j = 0; j < d.length; j++)
             {
-                tr = table.append('tr')
-                tr.append('div').classed('values-table__key', true).text(LANGUAGES[d[j]][curlang]).style('color',COLORS[ID2C[d[j]]])
+                table.append('div').classed('values-table__key', true).text(LANGUAGES[d[j]][curlang]).style('color',COLORS[ID2C[d[j]]])
                 /*colors = "red,orange,yellow,green,blue,purple".split(",");
                 if(d[j] == "just")
                 {
@@ -62,7 +61,7 @@
                         td.append("span").text(LANGUAGES[d[j]+"desc"][curlang][k]).style('font-size',18).style('color',COLORS[colors[k%colors.length]]).style('font-weight', 'bold')
                 }
                 else*/
-                tr.append('div').classed('values-table__value', true).text(LANGUAGES[d[j]+"desc"][curlang]).style('color',COLORS[ID2C[d[j]]])
+                table.append('div').classed('values-table__value', true).text(LANGUAGES[d[j]+"desc"][curlang]).style('color',COLORS[ID2C[d[j]]])
             }
             section.append('hr')
         }

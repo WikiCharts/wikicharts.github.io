@@ -1,5 +1,6 @@
 .values-table {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .values-table__key {
@@ -8,5 +9,7 @@
 }
 
 .values-table__value {
+    font-size: 18px;
+    padding: 20px;
 
 }
