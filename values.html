@@ -1,21 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WikiCharts</title>
     <meta
       name="description"
       content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно."
     />
-    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/images/Charts.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="Charts.png"/>
     <meta property="og:url" content="https://wikicharts.github.io/" />
     <meta property="og:title" content="WikiCharts" />
     <meta property="og:locale" content="ru_RU" />
-    <meta
-      property="og:description"
-      content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно."
-    />
-    <meta property="og:image" content="/images/Charts.jpg" />
+    
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/warning.css">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
     <script>
@@ -25,32 +27,15 @@
 
     gtag('config', 'G-0JY69PX91M');
     </script>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="data/Charts.png"/>
-    <title>WikiCharts - Values</title>
-    <style>
-        body {
-            font-family: Arial;
-            color: lightgrey
-        }
-        a[href] {
-            color: #1e8ad6;
-        }
-        a[href]:hover {
-            color: #3ba0e6;
-        }
-    </style>
-    <body style="background-color:#2b2d30">
-    </body>
-    <script src="d3.min.js"></script>
-    <script src="render.js"></script>
+    <script src="./d3.min.js"></script>
+    <script src="./render.js"></script>
     <script>
     d3.tsv("translations/translations.tsv").then(LANGUAGEDATA=> {
         curlang = window.location.href.split("lang=")[1].split("&")[0]
         LANGUAGES = {}
         for(var i = 0; i < LANGUAGEDATA.length; i++)
             LANGUAGES[LANGUAGEDATA[i].key+LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i];
-        center = d3.select('body').append('center')
+        center = d3.select('content')
         center.append("a").attr("href",("/"+curlang+".html").replace("ru.html","")).append("h2").text("На главную")
         dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min","speech,cont,moder,just,obs,free","legal,retribu,det,warn,rehab,decn","fore,iso,sov,pop,pop*,friend,friend*"].map(d=>d.split(","))
         for(var i = 0; i < dimensions.length; i++) {
@@ -82,3 +67,17 @@
     });
     </script>
 </head>
+<body>
+    <article class="wikicharts">
+        <aside class="sidebar wikicharts__sidebar">
+            <nav class="wikicharts__sidebar-buttons">
+                <a class="wikicharts__sidebar-button wikicharts__sidebar-button--home" href="./">На главную</a>
+            </nav>
+            <a class="wikicharts__sidebar-button wikicharts__sidebar-button--start" href="quiz.html?lang=ru">Начать тест</a>
+        </aside>
+        <main class="content wikicharts__content">
+
+        </main>
+    </article>
+</body>
+<html>

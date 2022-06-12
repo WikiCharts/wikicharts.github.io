@@ -34,6 +34,76 @@ a {
     }
 }
 
+.wikicharts__sidebar {
+    background-color: #090d18;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 36px;
+    position: sticky;
+    top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__sidebar {
+        border-radius: 0;
+        flex-direction: column;
+        gap: 12px;
+        padding-inline: 20px;
+    }
+}
+
+.wikicharts__sidebar-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.wikicharts__sidebar-button {
+    align-items: center;
+    background-color: rgba(var(--theme-link--rgb), .1);
+    border: none;
+    border-radius: 3px;
+    color: var(--theme-link);
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    min-height: 24px;
+    padding: 6px 12px;
+    text-align: center;
+    transition: background-color .3s;
+}
+
+.wikicharts__sidebar-button:hover {
+    background-color: rgba(var(--theme-link--rgb), .2);
+}
+
+.wikicharts__sidebar-button:active {
+    background-color: rgba(var(--theme-link--rgb), .3);
+}
+
+.wikicharts__sidebar-button--start {
+    background-color: rgba(var(--theme-link--rgb), 1);
+    color: white;
+}
+
+.wikicharts__sidebar-button--start:hover {
+    background-color: rgba(var(--theme-link--rgb), .8);
+    color: white;
+}
+
+.wikicharts__sidebar-button--start:active {
+    background-color: rgba(var(--theme-link--rgb), .6);
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__sidebar-button {
+        flex-basis: 33%;
+    }
+}
+
 .wikicharts__content {
     padding: 20px 36px;
 }
