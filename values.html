@@ -40,10 +40,12 @@
         dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min","speech,cont,moder,just,obs,free","legal,retribu,det,warn,rehab,decn","fore,iso,sov,pop,pop*,friend,friend*"].map(d=>d.split(","))
         
         for(var i = 0; i < dimensions.length; i++) {
-            section = center.append("section").classed("section wikicharts__section")
+            section = center.append("section")
+            section.classed("section wikicharts__section", true)
 
-            section.append("h2").text(LANGUAGES[dimensions[i][0]][curlang]).classed("section__title")
-            table = section.append("div").classed('values-table')
+            section.append("h2").text(LANGUAGES[dimensions[i][0]][curlang]).classed("section__title", true)
+            table = section.append("div")
+            table.classed('values-table', true)
 
             d = dimensions[i].slice(1)
             d.sort((a,b) => (LANGUAGES[a][curlang] > LANGUAGES[b][curlang]) ? 1 : -1)
@@ -51,7 +53,7 @@
             for(var j = 0; j < d.length; j++)
             {
                 tr = table.append('tr')
-                tr.append('div').classed('values-table__key').text(LANGUAGES[d[j]][curlang]).style('color',COLORS[ID2C[d[j]]])
+                tr.append('div').classed('values-table__key', true).text(LANGUAGES[d[j]][curlang]).style('color',COLORS[ID2C[d[j]]])
                 /*colors = "red,orange,yellow,green,blue,purple".split(",");
                 if(d[j] == "just")
                 {
@@ -60,7 +62,7 @@
                         td.append("span").text(LANGUAGES[d[j]+"desc"][curlang][k]).style('font-size',18).style('color',COLORS[colors[k%colors.length]]).style('font-weight', 'bold')
                 }
                 else*/
-                tr.append('div').classed('values-table__value').text(LANGUAGES[d[j]+"desc"][curlang]).style('color',COLORS[ID2C[d[j]]])
+                tr.append('div').classed('values-table__value', true).text(LANGUAGES[d[j]+"desc"][curlang]).style('color',COLORS[ID2C[d[j]]])
             }
             section.append('hr')
         }
