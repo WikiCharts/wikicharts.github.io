@@ -4,12 +4,12 @@
 }
 
 .values-table__key {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .values-table__value {
     font-size: 18px;
-    padding: 20px;
-
+    padding: 10px 20px;
 }
