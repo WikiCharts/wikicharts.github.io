@@ -1,0 +1,126 @@
+html, body {
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-attachment: fixed;
+    background-image: linear-gradient(0deg, #090d18, #121630);
+}
+
+.wikicharts {
+    background-color: #171a44;
+    border-radius: 3px;
+    margin-inline: auto;
+    margin-top: 100px;
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts {
+        margin-top: 0;
+    }
+}
+
+.wikicharts a {
+    color: #0094FF;
+    text-decoration: none;
+}
+
+a.wikicharts__start-button {
+    align-items: center;
+    background-color: #0094FF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 6px 12px;
+    text-align: center;
+}
+
+.wikicharts__sidebar {
+    background-color: #090d18;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 36px;
+    position: sticky;
+    top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__sidebar {
+        flex-direction: column;
+        gap: 12px;
+        padding-inline: 20px;
+    }
+}
+
+.wikicharts__sidebar-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.wikicharts__sidebar-button {
+    align-items: center;
+    background-color: #0094FF11;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    min-height: 24px;
+    padding: 6px 12px;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__sidebar-button {
+        flex-basis: 33%;
+    }
+}
+
+.wikicharts__content {
+    padding: 20px 36px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wikicharts__content {
+        padding-inline: 20px;
+    }
+}
+
+.wikicharts__logo {
+    margin-inline: auto;
+}
+
+.wikicharts__section {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+}
+
+.wikicharts__section:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.wikicharts__section--start-quiz {
+    align-items: center;
+    gap: 20px;
+}
+
+.section__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-inline: auto;
+    margin-block: 0;
+}
