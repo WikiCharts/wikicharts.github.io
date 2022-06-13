@@ -1,6 +1,7 @@
 maxQs = 13
 COLORS = { maroon: "#cd5d7d", red: "#fb8072", orange: "#fdb462", yellow: "#ffffb3", green: "#7bf1a8", mint: "#60d394", aqua: "#8dd3c7", blue: "#80b1d3", cyan: "#9bf6ff", purple: "#bdb2ff", royal: "#9381ff", pink: "#ffc6ff", black: "#000000", grey: "#888888", white: "#dddddd" }
 ID2C = { "nota": "black", "idc": "grey", "auth": "orange", "olig": "maroon", "strato": "purple", "cent": "white", "dir": "mint", "dir*": "cyan", "rep": "pink", "repr": "pink", "rep*": "red", "repr*": "red", "cons": "aqua", "min": "yellow", "cont": "blue", "moder": "aqua", "just": "pink", "obs": "green", "free": "yellow", "retrib": "maroon", "retribu": "maroon", "det": "blue", "warn": "green", "rehab": "pink", "decn": "yellow", "iso": "orange", "sov": "blue", "pop": "maroon", "pop*": "royal", "friend": "pink", "friend*": "cyan" }
+
 //create boxes statically once so call stack doesn't grow infinitely every time you click something
 function renderFormat() {
     Backgrounds = []
@@ -19,34 +20,41 @@ function renderFormat() {
         bounds = [100, Y, 800, Boxheight]
         createBox(bounds).attr('fill', 'transparent').datum(i).on('click', d => { if (ANSWERS[d] == "prev") { previous(d) } else { Answers[questionindex] = d; renderQuestion(d) } })
     }
-    leftcbox = createBox(bl).attr('fill', 'transparent').on("click", function (d) { nextq(1) })
-    rightcbox = createBox(br).attr('fill', 'transparent').on("click", d => { (Selected < ANSWERS.length - OMIT_N) ? nextq(1.5) : nextq(1) })
+    leftcbox = createBox(bl).attr('fill', 'transparent').on("click", function (d) { next(1) })
+    rightcbox = createBox(br).attr('fill', 'transparent').on("click", d => { (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1) })
 }
+
 function renderQuestion(selected) {
     Selected = selected
     QUESTION = Qs[questionindex].key
     ANSWERS = []
-    for (var i = 0; i < Qs[questionindex].order.length; i++) {
+
+    for (var i = 0; i < Qs[questionindex].order.length; i++)
         ANSWERS.push(QUESTION + Qs[questionindex].order[i])
-    }
+
     ANSWERS.push("o")
     ANSWERS.push("a")
     OMIT_N = 2
+
     if (questionindex > 0) {
         ANSWERS.push("prev")
         OMIT_N = 3
     }
+
     svg.attr('height', (Boxheight + Boxpadding) * ANSWERS.length + Questionsize + 2 * Questionpadding)
     svg.selectAll("text").remove()
     svg.selectAll("image").remove()
     createText([100, Questionpadding, 800, Questionsize], QUESTION, 0, "lightgrey")
     createLineText([950, Questionpadding, 100, Questionsize], (questionindex + 1) + "/" + Qs.length).attr('fill', "lightgrey")
+
     SIZE = 1000
     Q = []
+
     leftbox.attr('y', -1000)
     leftcbox.attr('y', -1000)
     rightbox.attr('y', -1000)
     rightcbox.attr('y', -1000)
+
     for (var i = 0; i < ANSWERS.length; i++) {
         Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
         bounds = [100, Y, 800, Boxheight]
@@ -54,6 +62,7 @@ function renderQuestion(selected) {
         SIZE = Math.min(SIZE, T[1])
         Q.push(T[0])
         Backgrounds[i].attr('fill', i == selected ? '#5081a3' : '#80b1d3')
+
         if (i == selected) {
             if (i < ANSWERS.length - OMIT_N) {
                 bl = [100, Y, Boxheight, Boxheight]
@@ -68,6 +77,7 @@ function renderQuestion(selected) {
             rightcbox.attr('y', Y)
         }
     }
+
     if (questionindex == 0) {
         H = svg.attr('height') - 80
         W = 50 * H / 1056
@@ -89,6 +99,7 @@ function renderQuestion(selected) {
         for (j = 0; j < Q[i].length; j++)
             Q[i][j].attr("font-size", SIZE)
 }
+
 function renderChart(box, result) {
     pct = 1000
     for (var i = result.length - 1; i >= 0; i--) {
@@ -96,11 +107,13 @@ function renderChart(box, result) {
         pct -= result[i][1]
     }
 }
+
 function renderInfoBox(box, result) {
     createBox(box).attr('fill', COLORS[ID2C[result[0]]])
     createLineText([box[0] + 10, box[1] + 10, box[2] - ResultPercentWidth + 8, ResultPercentHeight], (result[1] / 10) + "% " + LANGUAGES[result[0]][curlang]).attr('fill', result[0] == "nota" ? "white" : "black")
     createText([box[0] + 10, box[1] + 20 + ResultPercentHeight, box[2] - ResultPercentWidth + 8, box[3] - 30 - ResultPercentHeight], result[0] + "desc", 0, result[0] == "nota" ? "white" : "black")
 }
+
 function renderResult(box, result, label) {
     textg = svg
     renderChart([box[0], box[1] + ResultLabelheight, box[3] - ResultLabelheight, box[3] - ResultLabelheight], result)
