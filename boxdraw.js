@@ -3,7 +3,7 @@ function createBox(box) {
 }
 
 function createQuizAnswer() {
-    return quizContent.append("button").classed("quiz_answer");
+    return quizContent.append("button").classed("quiz__answer", true);
 }
 
 //splits text into rows, minimizing the total width
