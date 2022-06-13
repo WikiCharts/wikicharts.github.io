@@ -1,6 +1,11 @@
 function createBox(box) {
     return svg.append('rect').attr('x',box[0]).attr('y',box[1]).attr('width',box[2]).attr('height',box[3]).attr('rx',20).attr('ry',20)
 }
+
+function createQuizAnswer() {
+    return quizContent.append("button").classed("quiz_answer");
+}
+
 //splits text into rows, minimizing the total width
 function splitRows(parts, rows, index) {
     var res = []

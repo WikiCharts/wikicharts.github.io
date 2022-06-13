@@ -4,24 +4,33 @@ ID2C = { "nota": "black", "idc": "grey", "auth": "orange", "olig": "maroon", "st
 
 //create boxes statically once so call stack doesn't grow infinitely every time you click something
 function renderFormat() {
-    Backgrounds = []
+    Backgrounds = [];
+    quizAnswers = [];
+
     for (var i = 0; i < maxQs; i++) {
-        Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
-        bounds = [100, Y, 800, Boxheight]
-        Backgrounds.push(createBox(bounds).attr('fill', '#80b1d3'))
+        Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding;
+        bounds = [100, Y, 800, Boxheight];
+        Backgrounds.push(createBox(bounds).attr('fill', '#80b1d3'));
+
+        quizAnswers.push(createQuizAnswer());
     }
-    bl = [100, Y, Boxheight, Boxheight]
-    leftbox = createBox(bl).attr('fill', '#ffff7f')
-    br = [900 - Boxheight, Y, Boxheight, Boxheight]
-    rightbox = createBox(br).attr('fill', '#30b364')
-    textg = svg.append('g')
+
+    bl = [100, Y, Boxheight, Boxheight];
+    leftbox = createBox(bl).attr('fill', '#ffff7f');
+
+    br = [900 - Boxheight, Y, Boxheight, Boxheight];
+    rightbox = createBox(br).attr('fill', '#30b364');
+
+    textg = svg.append('g');
+
     for (var i = 0; i < maxQs; i++) {
         Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
         bounds = [100, Y, 800, Boxheight]
         createBox(bounds).attr('fill', 'transparent').datum(i).on('click', d => { if (ANSWERS[d] == "prev") { previous(d) } else { Answers[questionindex] = d; renderQuestion(d) } })
     }
-    leftcbox = createBox(bl).attr('fill', 'transparent').on("click", function (d) { next(1) })
-    rightcbox = createBox(br).attr('fill', 'transparent').on("click", d => { (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1) })
+
+    leftcbox = createBox(bl).attr('fill', 'transparent').on("click", function (d) { next(1) });
+    rightcbox = createBox(br).attr('fill', 'transparent').on("click", d => { (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1) });
 }
 
 function renderQuestion(selected) {
