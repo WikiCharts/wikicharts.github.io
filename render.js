@@ -5,14 +5,11 @@ ID2C = { "nota": "black", "idc": "grey", "auth": "orange", "olig": "maroon", "st
 //create boxes statically once so call stack doesn't grow infinitely every time you click something
 function renderFormat() {
     Backgrounds = [];
-    quizAnswers = [];
 
     for (var i = 0; i < maxQs; i++) {
         Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding;
         bounds = [100, Y, 800, Boxheight];
         Backgrounds.push(createBox(bounds).attr('fill', '#80b1d3'));
-
-        quizAnswers.push(createQuizAnswer());
     }
 
     bl = [100, Y, Boxheight, Boxheight];
@@ -38,8 +35,13 @@ function renderQuestion(selected) {
     QUESTION = Qs[questionindex].key
     ANSWERS = []
 
-    for (var i = 0; i < Qs[questionindex].order.length; i++)
-        ANSWERS.push(QUESTION + Qs[questionindex].order[i])
+    quizAnswers = [];
+
+    for (var i = 0; i < Qs[questionindex].order.length; i++) {
+        ANSWERS.push(QUESTION + Qs[questionindex].order[i]);
+
+        quizAnswers.push(createQuizAnswer());
+    }
 
     ANSWERS.push("o")
     ANSWERS.push("a")
@@ -53,8 +55,12 @@ function renderQuestion(selected) {
     svg.attr('height', (Boxheight + Boxpadding) * ANSWERS.length + Questionsize + 2 * Questionpadding)
     svg.selectAll("text").remove()
     svg.selectAll("image").remove()
-    createText([100, Questionpadding, 800, Questionsize], QUESTION, 0, "lightgrey")
-    createLineText([950, Questionpadding, 100, Questionsize], (questionindex + 1) + "/" + Qs.length).attr('fill', "lightgrey")
+
+    d3.select(".wikicharts__title").text((LANGUAGES[QUESTION] || ({ curlang: "ERROR" }))[curlang]);
+
+    d3.select(".wikicharts__footer-count-number--current").text(questionindex + 1);
+    d3.select(".wikicharts__footer-count-number--all").text(Qs.length);
+    d3.select(".wikicharts__footer-progress-bar").attr("max", Qs.length).attr("value", questionindex + 1);
 
     SIZE = 1000
     Q = []
@@ -93,6 +99,7 @@ function renderQuestion(selected) {
         W2 = W * 0.8
         CW = 100 - W - W2 / 2
         CH = 80 + H / 2
+
         if (selected >= 0) {
             createLineText([CW - H / 2, CH - W2 / 2, H, W2], LANGUAGES["BL"][curlang]).attr("transform", "rotate(-90," + CW + "," + CH + ")").attr('fill', 'lightgrey')
             svg.append("image").attr("href", "data/left.png").attr('x', 100 - W).attr('y', 80).attr('width', W).attr('height', H)
@@ -104,6 +111,7 @@ function renderQuestion(selected) {
             svg.append("image").attr("href", "data/left.png").attr('x', 100 - W).attr('y', 80).attr('width', W).attr('height', H)
         }
     }
+
     for (i = 0; i < Q.length; i++)
         for (j = 0; j < Q[i].length; j++)
             Q[i][j].attr("font-size", SIZE)
