@@ -9,22 +9,65 @@
 }
 
 .quiz__answer {
-    align-items: center;
-    background-color: rgba(var(--theme-link--rgb), 1);
-    border: none;
+    background-color: gray;
     border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.quiz__answer:not(.is-visible) {
+    display: none;
+}
+
+.quiz__answer.rightbox, .quiz__answer.leftbox {
+    display: flex;
+}
+
+.quiz__answer.leftbox {
+    background-color: #FFFF55;
+}
+
+.quiz__answer.rightbox {
+    background-color: #55FF55;
+}
+
+.quiz__answer-button {
+    align-items: center;
+    background-color: rgb(60 80 180);
+    border: none;
     color: white;
     cursor: pointer;
     display: flex;
+    font-size: 14px;
+    font-family: Rubik, sans-serif;
+    font-weight: bold;
     justify-content: start;
     line-height: 1.5em;
     min-height: 36px;
-    padding: 6px 12px;
+    padding:  12px;
+    text-align: left;
     transition: background-color .3s;
+    width: 100%;
 }
 
-.quiz__answer:hover {
-    background-color: rgba(var(--theme-link--rgb), .8);
+.quiz__answer-button:hover {
+    background-color: rgb(50 70 170);
+}
+
+.quiz__answer-button:active {
+    background-color: rgb(40 60 160);
+}
+
+.quiz__answer-button.not-agree {
+    background-color: #F44336;
+}
+
+.quiz__answer-button.not-interested {
+    background-color: #D9A509;
+}
+
+.quiz__answer-button.previous {
+    background-color: #08998F;
 }
 
 .wikicharts__footer {

@@ -6,28 +6,38 @@ ID2C = { "nota": "black", "idc": "grey", "auth": "orange", "olig": "maroon", "st
 function renderFormat() {
     Backgrounds = [];
 
+    quizAnswers = [];
+
     for (var i = 0; i < maxQs; i++) {
         Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding;
         bounds = [100, Y, 800, Boxheight];
         Backgrounds.push(createBox(bounds).attr('fill', '#80b1d3'));
+
+        // quizAnswers.push(createQuizAnswer());
     }
 
-    bl = [100, Y, Boxheight, Boxheight];
-    leftbox = createBox(bl).attr('fill', '#ffff7f');
-
-    br = [900 - Boxheight, Y, Boxheight, Boxheight];
-    rightbox = createBox(br).attr('fill', '#30b364');
+    // bl = [100, Y, Boxheight, Boxheight];
+    // leftbox = createBox(bl).attr('fill', '#ffff7f');
+    ;
+    // br = [900 - Boxheight, Y, Boxheight, Boxheight];
+    // rightbox = createBox(br).attr('fill', '#30b364');
+    
 
     textg = svg.append('g');
 
     for (var i = 0; i < maxQs; i++) {
-        Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
-        bounds = [100, Y, 800, Boxheight]
-        createBox(bounds).attr('fill', 'transparent').datum(i).on('click', d => { if (ANSWERS[d] == "prev") { previous(d) } else { Answers[questionindex] = d; renderQuestion(d) } })
+        quizAnswers.push(createQuizAnswer().datum(i).on("click", d => {
+            if (ANSWERS[d] == "prev") previous(d)
+            else Answers[questionindex] = d; renderQuestion(d)
+        }))
     }
 
-    leftcbox = createBox(bl).attr('fill', 'transparent').on("click", function (d) { next(1) });
-    rightcbox = createBox(br).attr('fill', 'transparent').on("click", d => { (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1) });
+    leftbox = createQuizAnswer().text("LB").on("click", function (d) { next(1) });
+    d3.select(leftbox.node().parentNode).classed("leftbox", true);
+    rightbox = createQuizAnswer().text("RB").on("click", d => {
+        (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
+    });
+    d3.select(rightbox.node().parentNode).classed("rightbox", true);
 }
 
 function renderQuestion(selected) {
@@ -35,12 +45,8 @@ function renderQuestion(selected) {
     QUESTION = Qs[questionindex].key
     ANSWERS = []
 
-    quizAnswers = [];
-
     for (var i = 0; i < Qs[questionindex].order.length; i++) {
         ANSWERS.push(QUESTION + Qs[questionindex].order[i]);
-
-        quizAnswers.push(createQuizAnswer());
     }
 
     ANSWERS.push("o")
@@ -65,10 +71,7 @@ function renderQuestion(selected) {
     SIZE = 1000
     Q = []
 
-    leftbox.attr('y', -1000)
-    leftcbox.attr('y', -1000)
-    rightbox.attr('y', -1000)
-    rightcbox.attr('y', -1000)
+    d3.selectAll(".is-visible").classed("is-visible", false).classed("previous", false).classed("not-agree", false).classed("not-interested", false);
 
     for (var i = 0; i < ANSWERS.length; i++) {
         Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
@@ -78,18 +81,25 @@ function renderQuestion(selected) {
         Q.push(T[0])
         Backgrounds[i].attr('fill', i == selected ? '#5081a3' : '#80b1d3')
 
+        d3.select(quizAnswers[i].node().parentNode).classed("is-visible", true);
+        quizAnswers[i].text((LANGUAGES[ANSWERS[i]] || ({ curlang: "ERROR" }))[curlang]);
+
+        if (ANSWERS[i] == "prev") quizAnswers[i].classed("previous", true);
+        if (ANSWERS[i] == "o") quizAnswers[i].classed("not-agree", true);
+        if (ANSWERS[i] == "a") quizAnswers[i].classed("not-interested", true);
+
         if (i == selected) {
             if (i < ANSWERS.length - OMIT_N) {
                 bl = [100, Y, Boxheight, Boxheight]
                 leftbox.attr('y', Y)
                 createLineText(bl, "?")
-                leftcbox.attr('y', Y)
+                // leftcbox.attr('y', Y)
 
             }
             br = [900 - Boxheight, Y, Boxheight, Boxheight]
             rightbox.attr('y', Y)
             createLineText(br, "✓")
-            rightcbox.attr('y', Y)
+            // rightcbox.attr('y', Y)
         }
     }
 

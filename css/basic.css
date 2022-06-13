@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap');
+
 :root {
     --theme-link: #0094ff;
     --theme-link--rgb: 0, 149, 255;
@@ -5,7 +7,7 @@
 
 html, body {
     color: white;
-    font-family: sans-serif;
+    font-family: Rubik, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -31,6 +33,7 @@ a {
 @media screen and (max-width: 1000px) {
     .wikicharts {
         margin-block: 0;
+        min-height: 100vh;
     }
 }
 

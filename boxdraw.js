@@ -3,7 +3,7 @@ function createBox(box) {
 }
 
 function createQuizAnswer() {
-    return quizContent.append("button").classed("quiz__answer", true).attr("type", "button").text("Lorem Ipsum")
+    return quizContent.append("div").classed("quiz__answer", true).append("button").classed("quiz__answer-button", true).attr("type", "button").text("Lorem Ipsum")
 }
 
 //splits text into rows, minimizing the total width
