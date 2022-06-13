@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <title>WikiCharts</title>
-    <meta
-      name="description"
-      content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно."
-    />
+    <meta name="description"
+        content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно." />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/images/Charts.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="Charts.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="Charts.png" />
     <meta property="og:url" content="https://wikicharts.github.io/" />
     <meta property="og:title" content="WikiCharts" />
     <meta property="og:locale" content="ru_RU" />
-    
+
     <link rel="stylesheet" href="./css/basic.css">
     <link rel="stylesheet" href="./css/warning.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        gtag('js', new Date())
 
-    gtag('config', 'G-0JY69PX91M');
+        gtag('config', 'G-0JY69PX91M');
     </script>
 </head>
+
 <body>
     <article class="wikicharts">
         <aside class="sidebar wikicharts__sidebar">
             <nav class="wikicharts__sidebar-buttons">
                 <a class="wikicharts__sidebar-button wikicharts__sidebar-button--home" href="./?lang=ru">На главную</a>
             </nav>
-            <a class="wikicharts__sidebar-button wikicharts__sidebar-button--start" href="quiz.html?lang=ru">Начать тест</a>
+            <a class="wikicharts__sidebar-button wikicharts__sidebar-button--start" href="quiz.html?lang=ru">Начать
+                тест</a>
         </aside>
         <main class="content wikicharts__content">
             <h1 class="wikicharts__title">Внимание!</h1>
             <section role="region" class="section wikicharts__section wikicharts__section--start-quiz" id="StartQuiz">
-                <p>Вы уже прошли тест? Перед тем, как увидеть все возможные значения, рекомендуем сначала пройти тест, так как просмотр возможных значений может исказить ваши результаты.</p>
+                <p>Вы уже прошли тест? Перед тем, как увидеть все возможные значения, рекомендуем сначала пройти тест,
+                    так как просмотр возможных значений может исказить ваши результаты.</p>
                 <div class="warning-buttons">
-                    <a class="warning-buttons__button warning-buttons__button--yes" href="values.html?lang=ru">Да, я уже прошёл тест</a>
-                    <a class="warning-buttons__button warning-buttons__button--no" href="./?lang=ru">Нет, я ещё не прошёл тест</a>
+                    <a class="warning-buttons__button warning-buttons__button--yes" href="values.html?lang=ru">Да, я уже
+                        прошёл тест</a>
+                    <a class="warning-buttons__button warning-buttons__button--no" href="./?lang=ru">Нет, я ещё не
+                        прошёл тест</a>
                 </div>
             </section>
         </main>
     </article>
 </body>
+
 </html>
