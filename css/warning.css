@@ -14,7 +14,7 @@
 .warning-buttons__button {
     align-items: center;
     background-color: rgba(var(--theme-link--rgb), .1);
-    border: none;
+    border: 1px solid currentColor;
     border-radius: 3px;
     color: var(--theme-link);
     cursor: pointer;
