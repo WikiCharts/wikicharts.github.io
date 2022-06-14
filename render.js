@@ -8,8 +8,9 @@ function renderFormat() {
 
     for (var i = 0; i < maxQs; i++) {
         quizAnswers.push(createQuizAnswer().datum(i).on("click", d => {
-            if (ANSWERS[d] == "prev") previous(d)
-            else Answers[questionindex] = d; //renderQuestion(d)
+            if (ANSWERS[d] === "prev") previous(d);
+            else Answers[questionindex] = d;
+            
             d3.selectAll(".quiz__answer").classed("is-expanded", false);
             d3.select(quizAnswers[d].node().parentNode).classed("is-expanded", true);
         }))
@@ -40,93 +41,61 @@ function renderQuestion(selected) {
     d3.select(".wikicharts__footer-count-number--all").text(Qs.length);
     d3.select(".wikicharts__footer-progress-bar").attr("max", Qs.length).attr("value", questionindex + 1);
 
-    SIZE = 1000
-    Q = []
+    // SIZE = 1000
+    // Q = []
 
     d3.selectAll(".quiz__answer .buttons-container").remove();
-    d3.selectAll(".quiz__answer.is-visible").classed("is-visible", false).classed("is-expanded", false).select(".quiz__answer-button").classed("previous", false).classed("not-agree", false).classed("not-interested", false);
+
+    d3.selectAll(".quiz__answer.is-visible")
+        .classed("is-visible", false)
+        .classed("is-expanded", false)
+        .select(".quiz__answer-button")
+            .classed("previous", false)
+            .classed("not-agree", false)
+            .classed("not-interested", false);
 
     for (var i = 0; i < ANSWERS.length; i++) {
-        // Y = (Boxheight + Boxpadding) * i + Questionsize + 2 * Questionpadding
-        // bounds = [100, Y, 800, Boxheight]
-        // T = createText(bounds, ANSWERS[i], bounds[3])
-        // SIZE = Math.min(SIZE, T[1])
-        // Q.push(T[0])
-        // Backgrounds[i].attr('fill', i == selected ? '#5081a3' : '#80b1d3')
-
         d3.select(quizAnswers[i].node().parentNode).classed("is-visible", true);
         quizAnswers[i].text((LANGUAGES[ANSWERS[i]] || ({ curlang: "ERROR" }))[curlang]);
+    
+        let buttonsContainer = d3.select(quizAnswers[i].node().parentNode).append("div").classed("buttons-container", true);
 
-        if (ANSWERS[i] == "prev") {
-            quizAnswers[i].classed("previous", true);
-        } else if (ANSWERS[i] == "o") {
-            quizAnswers[i].classed("not-agree", true);
+        switch(ANSWERS[i]) {
+            case "prev":
+                quizAnswers[i].classed("previous", true);
+                break;
+            case "a":
+                quizAnswers[i].classed("not-interested", true);
+    
+                buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
+                    (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+                break;
+            case "o":
+                quizAnswers[i].classed("not-agree", true);
+                
+                buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
+                    (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+                break;
+            default:
+                buttonsContainer.append("button").classed("buttons-container__button leftbox", true).text("Предпочтение незначительно").on("click", (d) => {
+                    next(1);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
 
-            let buttonsContainer = d3.select(quizAnswers[i].node().parentNode).append("div").classed("buttons-container", true);
-            
-            buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
-                (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        } else if (ANSWERS[i] == "a") {
-            quizAnswers[i].classed("not-interested", true);
-
-            let buttonsContainer = d3.select(quizAnswers[i].node().parentNode).append("div").classed("buttons-container", true);
-
-            buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
-                (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        } else {
-            let buttonsContainer = d3.select(quizAnswers[i].node().parentNode).append("div").classed("buttons-container", true);
-
-            buttonsContainer.append("button").classed("buttons-container__button leftbox", true).text("Предпочтение незначительно").on("click", (d) => {
-                next(1);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-            buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
-                (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
+                buttonsContainer.append("button").classed("buttons-container__button rightbox", true).text("Предпочтение определённо").on("click", d => {
+                    (Selected < ANSWERS.length - OMIT_N) ? next(1.5) : next(1);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
         }
-
-        // if (i == selected) {
-        //     if (i < ANSWERS.length - OMIT_N) {
-        //         bl = [100, Y, Boxheight, Boxheight]
-        //         leftbox.attr('y', Y)
-        //         createLineText(bl, "?")
-        //         // leftcbox.attr('y', Y)
-
-        //     }
-        //     br = [900 - Boxheight, Y, Boxheight, Boxheight]
-        //     rightbox.attr('y', Y)
-        //     createLineText(br, "✓")
-        //     // rightcbox.attr('y', Y)
-        // }
     }
 
-    // if (questionindex == 0) {
-    //     H = svg.attr('height') - 80
-    //     W = 50 * H / 1056
-    //     W2 = W * 0.8
-    //     CW = 100 - W - W2 / 2
-    //     CH = 80 + H / 2
-
-    //     if (selected >= 0) {
-    //         createLineText([CW - H / 2, CH - W2 / 2, H, W2], LANGUAGES["BL"][curlang]).attr("transform", "rotate(-90," + CW + "," + CH + ")").attr('fill', 'lightgrey')
-    //         svg.append("image").attr("href", "data/left.png").attr('x', 100 - W).attr('y', 80).attr('width', W).attr('height', H)
-    //         createLineText([1000 - (CW + H / 2), CH - W2 / 2, H, W2], LANGUAGES["BR"][curlang]).attr("transform", "rotate(90," + (1000 - CW) + "," + CH + ")").attr('fill', 'lightgrey')
-    //         svg.append("image").attr("href", "data/right.png").attr('x', 900).attr('y', 80).attr('width', W).attr('height', H)
-    //     } else {
-    //         //bounds: [10,80,85-W,80,H]
-    //         createLineText([CW - H / 2, CH - W2 / 2, H, W2], LANGUAGES["A"][curlang]).attr("transform", "rotate(-90," + CW + "," + CH + ")").attr('fill', 'lightgrey')
-    //         svg.append("image").attr("href", "data/left.png").attr('x', 100 - W).attr('y', 80).attr('width', W).attr('height', H)
-    //     }
-    // }
-
-    for (i = 0; i < Q.length; i++)
-        for (j = 0; j < Q[i].length; j++)
-            Q[i][j].attr("font-size", SIZE)
+    // for (i = 0; i < Q.length; i++)
+    //     for (j = 0; j < Q[i].length; j++)
+    //         Q[i][j].attr("font-size", SIZE)
 }
 
 function renderChart(box, result) {

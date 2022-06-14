@@ -49,6 +49,7 @@ a {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    min-height: 36px;
     padding: 12px 36px;
     position: sticky;
     top: 0;
