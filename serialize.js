@@ -63,12 +63,12 @@ function parseAndPrune(tree) {
     return T
 }
 TREES = [
-            [["cons",["rep*",["dir*","min*"]]],["strato",["olig","auth"],[["nota",["idc","cent"]]]]],
+            [["cons",["rep*",["dir*","min*"]]],["strato",["olig","auth"],["nota",["idc","cent"]]]],
             [[["free","obs"],["just","moder"]],[["cont","idc"],["nota","cent"]]],
             ["rehab",[["warn","decn"],[["det","retrib"],["nota",["idc","cent"]]]]],
-            [["pop*","friend*"],[["sov",[["idc","nota"],["cent","iso"]]]]],
-            [["pop*","friend*"],[["sov",[["idc","nota"],["cent","iso"]]]]],
-            [["pop*","friend*"],[["sov",[["idc","nota"],["cent","iso"]]]]]
+            [["pop*","friend*"],["sov",[["idc","nota"],["cent","iso"]]]],
+            [["pop*","friend*"],["sov",[["idc","nota"],["cent","iso"]]]],
+            [["pop*","friend*"],["sov",[["idc","nota"],["cent","iso"]]]]
         ]
 function encode(data) {
     bits = ["0"]
