@@ -9,13 +9,13 @@ peoplepolicy	gov		dir	strato	auth/olig	cons	min	rep
 representation	gov		min	rep	cons	auth	dir	strato/olig							
 equality	gov		strato/olig	auth	dir/rep/cons	min									
 openness	gov		dir/rep/cons/min	auth/olig	strato	dir/rep/cons									
-freespeech	speech		free	cont	moder	obs	just								
+freespeech	speech		free	cont	moder	obs	just	cont*							
 profanity	speech		just	cont	free	obs	moder								
 etiquette	speech		cont	obs	moder/just	free									
 literacy	speech		just	obs/free	moder	cont									
 vulgarity	speech		obs	moder/just	cont	free	obs/just								
 banter	speech		moder	obs/free	cont	just									
-rules	legal		decn	retrib/det	warn	warn/rehab	warn/rehab/decn	retrib							
+rules	legal		decn	retrib/det	warn	warn/rehab	warn/rehab/decn	retrib*							
 blocking	legal		rehab	det	retrib	decn	warn								
 permanent	legal		retrib	warn	decn	det	rehab								
 recidivism	legal		det	decn	rehab	retrib	warn								
