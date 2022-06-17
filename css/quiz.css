@@ -142,6 +142,92 @@
     background-color: rgb(85, 255, 85, .3);
 }
 
+.modal {
+    /* fade-in animation */
+    animation: anim_modal-fade-in .3s ease forwards running;
+    background-color: #090d18;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    padding: 12px 24px;
+    transform: translateY(15px);
+    width: 700px;
+}
+
+@keyframes anim_modal-fade-in {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal::backdrop {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal__content-header {
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+}
+
+.modal__content-title {
+    margin: 0;
+}
+
+.modal__content-close {
+    align-items: center;
+    background-color: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    min-height: 24px;
+    outline: none;
+    padding: 6px 12px;
+    text-align: center;
+    transition: .3s;
+}
+
+.modal__content-text {
+    line-height: 1.5em;
+}
+
+.modal__separator {
+    background-color: white;
+    height: 2px;
+    margin-block: 20px;
+    margin-inline: auto;
+    width: 70%;
+}
+
+.modal .buttons-container__button {
+    cursor: default;
+    margin-block: 10px;
+    margin-inline: auto;
+    min-height: 24px;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 770px) {
+    .modal {
+        margin-inline: 10px;
+        width: auto;
+    }
+
+    .modal__separator  {
+        width: 100%;
+    }
+}
+
 .wikicharts__footer {
     align-items: center;
     background-color: rgba(0, 0, 0, .8);
