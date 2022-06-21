@@ -2,20 +2,37 @@
 <html lang="ru">
 
 <head>
-    <title>WikiCharts</title>
-    <meta name="description"
-        content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно." />
+    <title>WikiCharts • Тест</title>
+    <meta name="description" content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать
+        то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно." />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/images/Charts.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="Charts.png" />
-    <meta property="og:url" content="https://wikicharts.github.io/" />
-    <meta property="og:title" content="WikiCharts" />
-    <meta property="og:locale" content="ru_RU" />
 
-    <link rel="stylesheet" href="./css/basic.css">
-    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#090d18" media="(max-width: 1000px)">
+    <meta name="theme-color" content="#121630" media="(min-width: 1000px)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Тест">
+    <meta property="og:site_name" content="WikiCharts">
+    <meta property="og:description"
+        content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно.">
+    <meta property="og:url" content="https://wikicharts.github.io/quiz.html">
+    <meta property="og:image" content="https://wikicharts.ru/images/cover/cover.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="WikiCharts • Тест">
+    <meta name="twitter:description"
+        content="WikiCharts — новейший онлайн-тест на определение ваших взглядов по различным вопросам, связанным с Фэндомом. Вам будет предложена тема и ряд утверждений, и вам нужно будет выбрать то, которое больше всего соответствует вашему мнению. Пожалуйста, отвечайте честно.">
+    <meta name="twitter:image" content="https://wikicharts.ru/images/cover/cover.png">
+    <meta name="twitter:image:alt" content="Логотип WikiCharts">
+
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/quiz.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JY69PX91M"></script>
@@ -133,23 +150,23 @@
                     Boxheight *= 2
                 }
 
-                renderFormat();
-                renderQuestion();
+                renderFormat()
+                renderQuestion()
 
-                const modal = document.querySelector(".wikicharts__modal");
+                const modal = document.querySelector(".wikicharts__modal")
 
                 document.querySelector(".wikicharts__footer-help").addEventListener("click", () => {
                     modal.showModal()
-                }, false);
+                }, false)
 
                 document.querySelector(".modal__content-close").addEventListener("click", () => {
-                    modal.close();
-                }, false);
+                    modal.close()
+                }, false)
 
                 modal.addEventListener("click", (event) => {
                     if (event.target.nodeName.toLowerCase() === "dialog")
-                        modal.close();
-                }, false);
+                        modal.close()
+                }, false)
             })
         });
     </script>

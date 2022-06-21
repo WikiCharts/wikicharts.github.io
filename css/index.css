@@ -1,3 +1,38 @@
 .wikicharts__logo {
     margin-inline: auto;
 }
+
+.updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.updates-list__item {
+    padding-left: 30px;
+    position: relative;
+}
+
+.updates-list__item::before {
+    background-clip: padding-box;
+    background-color: var(--theme-link);
+    border: 4px solid rgba(var(--theme-link--rgb), .2);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 4px;
+    width: 8px;
+}
+
+.updates-list__date {
+    font-weight: bold;
+}
+
+.updates-list__text {
+    margin: 0;
+}
