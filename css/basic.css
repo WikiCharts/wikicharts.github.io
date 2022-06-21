@@ -5,6 +5,10 @@
     --theme-link--rgb: 0, 149, 255;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 html, body {
     color: white;
     font-family: Rubik, sans-serif;

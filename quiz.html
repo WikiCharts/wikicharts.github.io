@@ -133,15 +133,22 @@
                     Boxheight *= 2
                 }
 
-                renderFormat()
-                renderQuestion()
+                renderFormat();
+                renderQuestion();
 
-                document.querySelector(".wikicharts__footer-help").addEventListener("click", function() {
-                    document.querySelector(".wikicharts__modal").showModal()
+                const modal = document.querySelector(".wikicharts__modal");
+
+                document.querySelector(".wikicharts__footer-help").addEventListener("click", () => {
+                    modal.showModal()
                 }, false);
 
-                document.querySelector(".modal__content-close").addEventListener("click", function() {
-                    document.querySelector(".wikicharts__modal").close();
+                document.querySelector(".modal__content-close").addEventListener("click", () => {
+                    modal.close();
+                }, false);
+
+                modal.addEventListener("click", (event) => {
+                    if (event.target.nodeName.toLowerCase() === "dialog")
+                        modal.close();
                 }, false);
             })
         });
@@ -158,18 +165,16 @@
                 </button>
             </div>
             <div class="modal__content-body">
-                <p class="modal__content-text">
+                <p class="modal__content-section">
                     Выберите из предложенных вариантов тот, который ближе всего к вашему мнению.
                 </p>
-                <div class="modal__separator"></div>
-                <p class="modal__content-text">
+                <p class="modal__content-section">
                     Нажмите
                     <span class="buttons-container__button leftbox">Предпочтение незначительно</span>
                     если предпочтение по
                     вашему мнению незначительно выделяется среди прочих вариантов.
                 </p>
-                <div class="modal__separator"></div>
-                <p class="modal__content-text">
+                <p class="modal__content-section">
                     Нажмите
                     <span class="buttons-container__button rightbox">Предпочтение определённо</span>
                     если предпочтение по вашему мнению сильно выделяется среди прочих вариантов.
