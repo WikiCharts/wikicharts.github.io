@@ -35,8 +35,7 @@
             for (var i = 0; i < LANGUAGEDATA.length; i++)
                 LANGUAGES[LANGUAGEDATA[i].key + LANGUAGEDATA[i].nonce] = LANGUAGEDATA[i]
             center = d3.select('.content')
-            // center.append("a").attr("href",("/"+curlang+".html").replace("ru.html","")).append("h2").text("На главную")
-            dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min", "speech,cont,moder,just,obs,free", "legal,retribu,det,warn,rehab,decn", "fore,iso,sov,pop,pop*,friend,friend*"].map(d => d.split(","))
+            dimensions = ["govt,auth,olig,strato,dir,dir*,repr,repr*,cons,min","speech,cont,cont*,moder,just,obs,free","legal,retribu,retribu*,det,warn,rehab,decn","fore,iso,sov,pop,pop*,friend,friend*"].map(d=>d.split(","))
 
             for (var i = 0; i < dimensions.length; i++) {
                 section = center.append("section")
@@ -52,14 +51,6 @@
                 for (var j = 0; j < d.length; j++) {
                     tr = table.append("div").classed("values-table__container", true)
                     tr.append('div').classed('values-table__key', true).text(LANGUAGES[d[j]][curlang]).style('color', COLORS[ID2C[d[j]]])
-                    /*colors = "red,orange,yellow,green,blue,purple".split(",");
-                    if(d[j] == "just")
-                    {
-                        td = tr.append('td').style('padding',"20px").append("p");
-                        for(k = 0; k < LANGUAGES[d[j]+"desc"][curlang].length; k++)
-                            td.append("span").text(LANGUAGES[d[j]+"desc"][curlang][k]).style('font-size',18).style('color',COLORS[colors[k%colors.length]]).style('font-weight', 'bold')
-                    }
-                    else*/
                     tr.append('div').classed('values-table__value', true).text(LANGUAGES[d[j] + "desc"][curlang]).style('color', COLORS[ID2C[d[j]]])
                 }
                 section.append('hr').classed('values-separator', true)
