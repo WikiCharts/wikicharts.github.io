@@ -8,7 +8,7 @@ policysetting	gov		auth/olig	rep	cons	dir	strato	min
 peoplepolicy	gov		dir	strato	auth/olig	cons	min	rep							
 representation	gov		min	rep	cons	auth	dir	strato/olig							
 equality	gov		strato/olig	auth	dir/rep/cons	min									
-openness	gov		dir/rep/cons/min	auth/olig	strato	dir/rep/cons									
+openness	gov		dir/cons	auth/olig	strato	rep/cons	min								
 freespeech	speech		free	cont	moder	obs	just	cont*							
 profanity	speech		just	cont	free	obs	moder								
 etiquette	speech		cont	obs	moder/just	free									
